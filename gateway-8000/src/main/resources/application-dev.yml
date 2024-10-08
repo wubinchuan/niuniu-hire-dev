@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true   #动态路由，由注册中心根据微服务的名称获得目标节点的位置地址
+      routes: #路由规则 LIST
+        - id: userRoute   #自定义 唯一
+          uri: lb://user-service #开启负载均衡
+          predicates:
+            - Path=/user/**     #根据路由来匹配
+        - id: companyRoute   #自定义 唯一
+          uri: lb://company-service  #开启负载均衡
+          predicates:
+            - Path=/c/**     #根据路由来匹配
+        - id: authRoute   #自定义 唯一
+          uri: lb://auth-service  #开启负载均衡
+          predicates:
+            - Path=/passport/**     #根据路由来匹配

@@ -1,10 +1,10 @@
 server:
-  port: 6001
+  port: 8000
   tomcat:
     uri-encoding: utf-8
     max-swallow-size: -1
 spring:
   application:
-    name: company-service
+    name: gateway
   profiles:
     active: dev

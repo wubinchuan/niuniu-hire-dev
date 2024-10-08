@@ -1,11 +1,13 @@
 server:
-  port: 7001
+  port: ${port:7001}
   tomcat:
     uri-encoding: utf-8
     max-swallow-size: -1
 spring:
-  profiles:
-    active: dev
+  application:
+    name: user-service
+#  profiles:
+#    active: dev
 logging:
   level:
     root: info
