@@ -12,7 +12,6 @@ public class InterceptorConfig implements WebMvcConfigurer {
     public SMSinterceptor smsInterceptor(){
         return new SMSinterceptor();
     }
-
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(smsInterceptor()).addPathPatterns("/passport/getSMsCode");

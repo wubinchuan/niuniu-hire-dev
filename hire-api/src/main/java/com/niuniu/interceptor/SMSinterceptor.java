@@ -1,6 +1,9 @@
 package com.niuniu.interceptor;
 
 import com.niuniu.base.BaseInfoProperties;
+import com.niuniu.exceptions.GraceException;
+import com.niuniu.exceptions.MyCustomException;
+import com.niuniu.result.ResponseStatusEnum;
 import com.niuniu.utils.IPUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -20,7 +23,8 @@ public class SMSinterceptor extends BaseInfoProperties implements HandlerInterce
 
         if(ipExists){
             log.info("短信发送频率太高啦");
-           return false;
+            GraceException.display(ResponseStatusEnum.SMS_NEED_WAIT_ERROR);
+            return false;
         }
         return true;
     }

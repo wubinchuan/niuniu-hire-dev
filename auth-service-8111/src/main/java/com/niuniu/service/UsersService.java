@@ -11,6 +11,7 @@ import com.niuniu.pojo.Users;
  * @since 2024-09-13
  */
 public interface UsersService {
-    public void save(Users user);
 
+    public Users userisExsts(String mobile);
+    public Users Createuser(String mobile);
 }

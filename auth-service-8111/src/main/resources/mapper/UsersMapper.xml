@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.niuniu.mapper.UsersMapper">
+  <select id="getUserExsis" resultType="com.niuniu.pojo.Users" parameterType="string">
+      select * from users where mobile=#{mobile}
+  </select>
+  <insert id="createUser">
 
-
+  </insert>
 </mapper>

@@ -15,6 +15,7 @@ import org.springframework.stereotype.Repository;
  * @since 2024-09-13
  */
 @Repository
-public interface UsersMapper extends BaseMapper<Users> {
-
+public interface UsersMapper {
+        Users getUserExsis(String mobile);
+        void createUser(Users user);
 }
